@@ -163,4 +163,4 @@ def server():
         return jsonify(result), 404
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=43234, debug=True)
+    app.run(host='0.0.0.0', port=43234, debug=True, use_reloader=False)
