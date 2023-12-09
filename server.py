@@ -108,9 +108,16 @@ def redirect_to_link():
 
 @app.route('/red', methods=['GET'])
 def redirect_to_link_out():
-    url = request.args.get('url')
-    link = f'ss://{url}'
-    return redirect(link)
+    text = f'''
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Title</title></head><script>
+var params = new URLSearchParams(window.location.search);
+var outlineKey = params.get('url');
+var name = params.get('name');
+console.log(redirectUrl);
+var redirectUrl = "ss://" + outlineKey + "#" + name;
+window.location.href = redirectUrl;
+</script></html>'''
+    return text
 
 @app.route('/', methods=['POST'])
 @auth.login_required
