@@ -106,6 +106,12 @@ def redirect_to_link():
     link = f'{c}&security={security}&fp={fp}&pbk={pbk}&sni={sni}&sid={sid}&spx=%2F#{name}'
     return redirect(link)
 
+@app.route('/red', methods=['GET'])
+def redirect_to_link_out():
+    url = request.args.get('url')
+    link = f'ss://{url}'
+    return redirect(link)
+
 @app.route('/', methods=['POST'])
 @auth.login_required
 def server():
