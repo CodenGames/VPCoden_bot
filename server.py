@@ -107,17 +107,51 @@ def redirect_to_link():
     return redirect(link)
 
 @app.route('/red', methods=['GET'])
-def redirect_to_link_out():
-    text = f'''
+def redirect_to_link_out_ss():
+    html = '''
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Title</title></head><script>
 var params = new URLSearchParams(window.location.search);
-var outlineKey = params.get('url');
+var key = params.get('url');
 var name = params.get('name');
-console.log(redirectUrl);
-var redirectUrl = "ss://" + outlineKey + "#" + name;
+var redirectUrl = "ss://" + key + "#" + name;
 window.location.href = redirectUrl;
 </script></html>'''
-    return text
+    return html
+
+@app.route('/red_vl', methods=['GET'])
+def redirect_to_link_out_vless():
+    html = '''
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Title</title></head><script>
+var params = new URLSearchParams(window.location.search);
+var key = params.get('url');
+if (key.startsWith('vless://') || key.startsWith('macos://') || key.startsWith('android://')) {
+    key = key.replace('a_n_d', '&');
+    key = key.replace('a_n_d', '&');
+    key = key.replace('a_n_d', '&');
+    key = key.replace('a_n_d', '&');
+    key = key.replace('a_n_d', '&');
+    key = key.replace('a_n_d', '&');
+    key = key.replace('a_n_d', '&');
+    key = key.replace('a_n_d', '&');
+    key = key.replace('a_n_d', '&');
+    key = key.replace('a_n_d', '&');
+    key = key.replace('a_n_d', '&');
+    var name = params.get('name');
+    if (key.startsWith('macos://')) {
+        key = key.replace('macos://', 'vless://');
+        key = 'v2box://install-sub?url=' + key + '&name=' + name;
+    } else if (key.startsWith('android://')) {
+        key = key.replace('android://', 'vless://');
+        key = 'v2rayng://install-config?url=' + key;
+    } else {
+        key += '#' + name;
+        key = 'streisand://import/' + key;
+    }
+}
+var redirectUrl = key;
+window.location.href = redirectUrl;
+</script></html>'''
+    return html
 
 @app.route('/', methods=['POST'])
 @auth.login_required
