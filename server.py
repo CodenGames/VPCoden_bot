@@ -41,7 +41,11 @@ TEST = 'aleksandr' in socket.gethostname().lower()
 
 if not TEST:
     result = run('pip install flask==2.3.1 flask-httpauth==4.8.0 --break-system-packages', shell = True, capture_output = True, encoding='cp866')
-    logger.debug(result.stdout + '\n\n' + result.stderr)
+    result = result.stdout + '\n\n' + result.stderr
+    if 'no such option' in result:
+        result = run('pip install flask==2.3.1 flask-httpauth==4.8.0', shell = True, capture_output = True, encoding='cp866')
+        result = result.stdout + '\n\n' + result.stderr
+    logger.debug(result)
 
 from flask import Flask, jsonify, make_response, request, redirect
 from flask_httpauth import HTTPBasicAuth
