@@ -3,6 +3,7 @@ import logging
 import os
 
 from subprocess import run
+import traceback
 from urllib.parse import quote
 from logging.handlers import TimedRotatingFileHandler
 from datetime import datetime, timedelta
@@ -203,7 +204,7 @@ def server():
                 result = sendResult(data=data)
                 return jsonify(result), 201
     except Exception as e:
-        logger.warning(f'❌Ошибка: {e}')
+        logger.warning(f'❌Ошибка: {traceback.format_exc(limit=1, chain=False)}')
         result = sendResult(success=False, error=f'Error: {e}')
         return jsonify(result), 404
 
