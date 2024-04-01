@@ -1,6 +1,6 @@
 apt-get update -y
 apt-get upgrade -y
-apt-get install -y sudo wget python3-pip curl sqlite3 supervisor
+apt-get install -y sudo wget curl sqlite3 supervisor
 
 sudo apt install -y wget software-properties-common build-essential libnss3-dev zlib1g-dev libgdbm-dev libncurses5-dev   libssl-dev libffi-dev libreadline-dev libsqlite3-dev libbz2-dev
 wget https://www.python.org/ftp/python/3.11.4/Python-3.11.4.tgz
