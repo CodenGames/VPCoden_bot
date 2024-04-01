@@ -7,9 +7,9 @@ wget https://www.python.org/ftp/python/3.11.4/Python-3.11.4.tgz
 tar xvf Python-3.11.4.tgz
 cd Python-3.11.4
 ./configure
-make clean
-make
-make install
+make clean -j $(nproc)
+make -j $(nproc)
+make install -j $(nproc)
 cd ..
 rm -rf Python-3.11.4.tgz
 rm -rf Python-3.11.4
