@@ -17,6 +17,7 @@ rm -rf Python-3.11.4
 wget https://raw.githubusercontent.com/CodenGames/VPCoden_bot/main/requirements.txt
 pip3.11 install -r requirements.txt
 pip3.11 install --upgrade pip
+rm -rf requirements.txt
 
 echo -e '[program:bot]\ncommand=python3.11 /root/bot.py > /dev/null 2>&1\nautostart=true\nautorestart=true\nuser=root' > /etc/supervisor/conf.d/bot.conf
 supervisorctl reread
