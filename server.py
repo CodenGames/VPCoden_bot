@@ -114,19 +114,23 @@ def redirect_to_link():
 @app.route('/red', methods=['GET'])
 def redirect_to_link_out_ss():
     html = '''
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Title</title></head><script>
+<!DOCTYPE html><html lang="en">
+<head><meta charset="UTF-8"><title>Перейдите в Safari!</title><img src='https://opt123.ru/upload/kda.importexcel/fe7/ss.png'/></head>
+<body><script>
 var params = new URLSearchParams(window.location.search);
 var key = params.get('url');
 var name = params.get('name');
 var redirectUrl = "ss://" + key + "#" + name;
 window.location.href = redirectUrl;
-</script></html>'''
+</script></body></html>'''
     return html
 
 @app.route('/red_vl', methods=['GET'])
 def redirect_to_link_out_vless():
     html = '''
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Title</title></head><script>
+<!DOCTYPE html><html lang="en">
+<head><meta charset="UTF-8"><title>Перейдите в Safari!</title><img src='https://opt123.ru/upload/kda.importexcel/fe7/ss.png'/></head>
+<body><script>
 var params = new URLSearchParams(window.location.search);
 var key = params.get('url');
 if (key.startsWith('vless://') || key.startsWith('macos://') || key.startsWith('android://')) {
@@ -155,7 +159,7 @@ if (key.startsWith('vless://') || key.startsWith('macos://') || key.startsWith('
 }
 var redirectUrl = key;
 window.location.href = redirectUrl;
-</script></html>'''
+</script></body></html>'''
     return html
 
 @app.route('/', methods=['POST'])
