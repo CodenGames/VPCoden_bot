@@ -111,6 +111,64 @@ def redirect_to_link():
     link = f'{c}&security={security}&fp={fp}&pbk={pbk}&sni={sni}&sid={sid}&spx=%2F#{name}'
     return redirect(link)
 
+@app.route('/pay', methods=['GET'])
+def redirect_to_pay():
+    html = '''
+<!DOCTYPE html><html>
+<head>
+<meta charset="UTF-8">
+<title>Перейдите в Safari!</title>
+<base href="/">
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('https://opt123.ru/upload/kda.importexcel/fe7/ss.png') no-repeat center center fixed;
+    background-size: cover;
+}
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+    position: fixed;
+}
+</style>
+</head>
+<body>
+<noscript>
+    <img src="https://opt123.ru/upload/kda.importexcel/fe7/ss.png" alt="Background Image" style="width: 100%; height: 100%; object-fit: cover;">
+</noscript>
+<script>
+window.onload = function() {
+    var params = new URLSearchParams(window.location.search);
+    var url = params.get('url');
+    
+    
+    function detectIosWebView()
+    {
+        if(window?.webkit?.messageHandlers)
+        {
+            return true;
+        }
+
+        const webViewMode = window.document?.documentElement?.clientHeight === window.document?.documentElement?.scrollHeight;
+        return webViewMode
+    }
+
+    if (!detectIosWebView()){
+        window.location.href = url;
+    }
+};
+</script>
+</body>
+</html>'''
+    return html
+
 @app.route('/red', methods=['GET'])
 def redirect_to_link_out_ss():
     html = '''
