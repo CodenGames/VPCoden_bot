@@ -160,7 +160,9 @@ window.onload = function() {
         return webViewMode
     }
 
-    if (!detectIosWebView()){
+    is_not_ios = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) === null;
+
+    if (!detectIosWebView() || is_not_ios) {
         window.location.href = url;
     }
 };
