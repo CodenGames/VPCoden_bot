@@ -117,18 +117,8 @@ def redirect_to_pay():
 <!DOCTYPE html><html>
 <head>
 <meta charset="UTF-8">
-<title>Перейдите в Safari!</title>
 <base href="/">
 <style>
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('https://opt123.ru/upload/kda.importexcel/fe7/aa.png') no-repeat center center fixed;
-    background-size: cover;
-}
 html {
     height: 100vh;
 }
@@ -140,31 +130,11 @@ body {
 </style>
 </head>
 <body>
-<noscript>
-    <img src="https://opt123.ru/upload/kda.importexcel/fe7/aa.png" alt="Background Image" style="width: 100%; height: 100%; object-fit: cover;">
-</noscript>
 <script>
 window.onload = function() {
     var params = new URLSearchParams(window.location.search);
     var url = params.get('url');
-    
-    
-    function detectIosWebView()
-    {
-        if(window?.webkit?.messageHandlers)
-        {
-            return true;
-        }
-
-        const webViewMode = window.document?.documentElement?.clientHeight === window.document?.documentElement?.scrollHeight;
-        return webViewMode
-    }
-
-    is_not_ios = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) === null;
-
-    if (!detectIosWebView() || is_not_ios) {
-        window.location.href = url;
-    }
+    window.location.href = url;
 };
 </script>
 </body>
@@ -177,23 +147,8 @@ def redirect_to_link_out_ss():
 <!DOCTYPE html><html>
 <head>
 <meta charset="UTF-8">
-<title>Перейдите в Safari!</title>
-<style>
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('https://opt123.ru/upload/kda.importexcel/fe7/aa.png') no-repeat center center fixed;
-    background-size: cover;
-}
-</style>
 </head>
 <body>
-<noscript>
-    <img src="https://opt123.ru/upload/kda.importexcel/fe7/aa.png" alt="Background Image" style="width: 100%; height: 100%; object-fit: cover;">
-</noscript>
 <script>
 window.onload = function() {
     var params = new URLSearchParams(window.location.search);
@@ -213,23 +168,8 @@ def redirect_to_link_out_vless():
 <!DOCTYPE html><html>
 <head>
 <meta charset="UTF-8">
-<title>Перейдите в Safari!</title>
-<style>
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('https://opt123.ru/upload/kda.importexcel/fe7/aa.png') no-repeat center center fixed;
-    background-size: cover;
-}
-</style>
 </head>
 <body>
-<noscript>
-    <img src="https://opt123.ru/upload/kda.importexcel/fe7/aa.png" alt="Background Image" style="width: 100%; height: 100%; object-fit: cover;">
-</noscript>
 <script>
 window.onload = function() {
     var params = new URLSearchParams(window.location.search);
