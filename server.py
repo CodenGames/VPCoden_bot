@@ -126,7 +126,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('https://opt123.ru/upload/kda.importexcel/fe7/ss.png') no-repeat center center fixed;
+    background: url('https://opt123.ru/upload/kda.importexcel/fe7/aa.png') no-repeat center center fixed;
     background-size: cover;
 }
 html {
@@ -141,7 +141,7 @@ body {
 </head>
 <body>
 <noscript>
-    <img src="https://opt123.ru/upload/kda.importexcel/fe7/ss.png" alt="Background Image" style="width: 100%; height: 100%; object-fit: cover;">
+    <img src="https://opt123.ru/upload/kda.importexcel/fe7/aa.png" alt="Background Image" style="width: 100%; height: 100%; object-fit: cover;">
 </noscript>
 <script>
 window.onload = function() {
@@ -185,14 +185,14 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('https://opt123.ru/upload/kda.importexcel/fe7/ss.png') no-repeat center center fixed;
+    background: url('https://opt123.ru/upload/kda.importexcel/fe7/aa.png') no-repeat center center fixed;
     background-size: cover;
 }
 </style>
 </head>
 <body>
 <noscript>
-    <img src="https://opt123.ru/upload/kda.importexcel/fe7/ss.png" alt="Background Image" style="width: 100%; height: 100%; object-fit: cover;">
+    <img src="https://opt123.ru/upload/kda.importexcel/fe7/aa.png" alt="Background Image" style="width: 100%; height: 100%; object-fit: cover;">
 </noscript>
 <script>
 window.onload = function() {
@@ -221,14 +221,14 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('https://opt123.ru/upload/kda.importexcel/fe7/ss.png') no-repeat center center fixed;
+    background: url('https://opt123.ru/upload/kda.importexcel/fe7/aa.png') no-repeat center center fixed;
     background-size: cover;
 }
 </style>
 </head>
 <body>
 <noscript>
-    <img src="https://opt123.ru/upload/kda.importexcel/fe7/ss.png" alt="Background Image" style="width: 100%; height: 100%; object-fit: cover;">
+    <img src="https://opt123.ru/upload/kda.importexcel/fe7/aa.png" alt="Background Image" style="width: 100%; height: 100%; object-fit: cover;">
 </noscript>
 <script>
 window.onload = function() {
