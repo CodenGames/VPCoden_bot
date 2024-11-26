@@ -163,47 +163,22 @@ window.onload = function() {
     return html
 
 @app.route('/red_vl', methods=['GET'])
-def redirect_to_link_out_vless():
+def redirect_key():
     html = '''
-<!DOCTYPE html><html>
-<head>
-<meta charset="UTF-8">
-</head>
-<body>
-<script>
+<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><script>
 window.onload = function() {
     var params = new URLSearchParams(window.location.search);
     var key = params.get('url');
-    if (key.startsWith('vless://') || key.startsWith('macos://') || key.startsWith('android://')) {
+    var name = params.get('name');
+
+    for (var i = 0; i < 10; i++) {
         key = key.replace('a_n_d', '&');
-        key = key.replace('a_n_d', '&');
-        key = key.replace('a_n_d', '&');
-        key = key.replace('a_n_d', '&');
-        key = key.replace('a_n_d', '&');
-        key = key.replace('a_n_d', '&');
-        key = key.replace('a_n_d', '&');
-        key = key.replace('a_n_d', '&');
-        key = key.replace('a_n_d', '&');
-        key = key.replace('a_n_d', '&');
-        key = key.replace('a_n_d', '&');
-        var name = params.get('name');
-        if (key.startsWith('macos://')) {
-            key = key.replace('macos://', 'vless://');
-            key = 'v2box://install-sub?url=' + key + '&name=' + name;
-        } else if (key.startsWith('android://')) {
-            key = key.replace('android://', 'vless://');
-            key = 'v2rayng://install-config?url=' + key;
-        } else {
-            key += '#' + name;
-            key = 'streisand://import/' + key;
-        }
     }
-    var redirectUrl = key;
+
+    var redirectUrl = key + '#' + name;
     window.location.href = redirectUrl;
 };
-</script>
-</body>
-</html>'''
+</script></body></html>'''
     return html
 
 @app.route('/', methods=['POST'])
