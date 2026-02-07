@@ -258,7 +258,7 @@ install_x-ui() {
 
     chmod +x x-ui bin/xray-linux-$(arch)
     cp -f x-ui.service /etc/systemd/system/
-    wget --no-check-certificate -O /usr/bin/x-ui https://codenlx.net/x
+    wget --no-check-certificate -O /usr/bin/x-ui https://raw.githubusercontent.com/CodenGames/VPCoden_bot/refs/heads/main/x.sh
     chmod +x /usr/local/x-ui/x-ui.sh
     chmod +x /usr/bin/x-ui
     # config_after_install
