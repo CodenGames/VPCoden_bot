@@ -23,3 +23,4 @@ echo -e '[program:bot]\ncommand=python3.11 /root/bot.py > /dev/null 2>&1\nautost
 supervisorctl reread
 supervisorctl update
 echo -e 'SHELL=/bin/bash\n0 3 * * * reboot\n0 7 * * * supervisorctl restart bot' | crontab -
+timedatectl set-timezone Europe/Moscow
